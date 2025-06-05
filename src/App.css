@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -11,9 +10,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +23,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +41,122 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Telegram 主题颜色 */
+:root {
+  --telegram-blue: #0088cc;
+  --telegram-light-blue: #00a2ff;
+  --telegram-dark-blue: #006699;
+  --telegram-light: #ffffff;
+  --telegram-gray: #f5f5f5;
+}
+
+/* 导航栏样式 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--telegram-light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar :global(.adm-nav-bar) {
+  background-color: var(--telegram-light);
+}
+
+.navbar :global(.adm-nav-bar-title) {
+  color: #333;
+}
+
+.navbar :global(.adm-nav-bar-right) {
+  color: #666;
+}
+
+/* 底部标签栏样式 */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--telegram-light);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tabbar :global(.adm-tab-bar-item) {
+  color: #666;
+}
+
+.tabbar :global(.adm-tab-bar-item-active) {
+  color: var(--telegram-blue);
+}
+
+/* 主要内容区域样式 */
+.min-h-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content {
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .navbar :global(.adm-nav-bar-right) {
+    display: none;
+  }
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.twitter-link {
+  color: #666;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.twitter-link:hover {
+  color: #0088cc;
+}
+
+.header-tabs {
+  border-top: 1px solid #eee;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
 }

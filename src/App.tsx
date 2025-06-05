@@ -1,12 +1,29 @@
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar/NavBar'
 import Home from './pages/home/home'
-import './App.css'
+import './app.css'
 
 /**
- * 主应用组件
+ * 应用主组件
  * @returns {React.ReactElement} 渲染的应用组件
  */
 function App(): React.ReactElement {
-  return <Home />
+  return (
+    <Router>
+      <div className="min-h-screen">
+        <NavBar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/faq" element={<div>FAQ Page</div>} />
+            <Route path="/apps" element={<div>Apps Page</div>} />
+            <Route path="/api" element={<div>API Page</div>} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  )
 }
 
 export default App

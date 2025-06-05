@@ -1,6 +1,5 @@
-import { useEffect } from 'react'
-import { Button } from 'antd-mobile'
-import '../../App.css'
+import React, { useEffect } from 'react'
+import './home.css'
 
 /**
  * 首页组件
@@ -9,76 +8,145 @@ import '../../App.css'
 function Home(): React.ReactElement {
   useEffect(() => {
     // 设置页面标题
-    document.title = 'Telegram - 一个新时代的通讯工具'
+    if (typeof document !== 'undefined') {
+      document.title = 'Telegram Messenger'
+    }
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* 导航栏 */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-8">
-            <img src="/telegram-logo.svg" alt="Telegram" className="h-8" />
-            <div className="hidden md:flex space-x-6">
-              <a href="#" className="text-gray-600 hover:text-telegram-blue">功能</a>
-              <a href="#" className="text-gray-600 hover:text-telegram-blue">安全</a>
-              <a href="#" className="text-gray-600 hover:text-telegram-blue">下载</a>
-              <a href="#" className="text-gray-600 hover:text-telegram-blue">API</a>
-            </div>
-          </div>
-          <Button color="primary" className="bg-telegram-blue">
-            开始使用
-          </Button>
+    <div className="page-container home-container">
+      {/* Logo 部分 */}
+      <div className="logo-section">
+        <div className="container mx-auto px-4">
+          <img src="/telegram-logo.svg" alt="Telegram" className="h-24 mx-auto" />
+          <h1>a new era of messaging</h1>
         </div>
-      </nav>
+      </div>
 
-      {/* 主要内容 */}
-      <main className="pt-20">
-        {/* Hero 部分 */}
-        <section className="bg-gradient-to-b from-telegram-blue to-telegram-light-blue text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              简单、快速、安全
-            </h1>
-            <p className="text-xl md:text-2xl mb-8">
-              一个新时代的通讯工具
-            </p>
-            <div className="flex justify-center space-x-4">
-              <Button color="primary" className="bg-white text-telegram-blue">
-                下载 Telegram
-              </Button>
-              <Button color="default" className="bg-transparent border-2 border-white">
-                了解更多
-              </Button>
+      {/* 下载部分 */}
+      <div className="download-section">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a href="#" className="download-card">
+              <i className="icon icon-android"></i>
+              <div>
+                <h3>Telegram for Android</h3>
+                <p>Download from Google Play</p>
+              </div>
+            </a>
+            <a href="#" className="download-card">
+              <i className="icon icon-ios"></i>
+              <div>
+                <h3>Telegram for iPhone / iPad</h3>
+                <p>Download from App Store</p>
+              </div>
+            </a>
+            <a href="#" className="download-card">
+              <i className="icon icon-desktop"></i>
+              <div>
+                <h3>Telegram for Windows / Mac / Linux</h3>
+                <p>Download from telegram.org</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 特性部分 */}
+      <div className="features-section">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-16">Why Telegram?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="feature-card">
+              <div className="feature-icon">
+                <img src="/simple.svg" alt="Simple" className="w-full h-full" />
+              </div>
+              <h3>Simple</h3>
+              <p>Telegram is so simple you already know how to use it.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <img src="/private.svg" alt="Private" className="w-full h-full" />
+              </div>
+              <h3>Private</h3>
+              <p>Telegram messages are heavily encrypted and can self-destruct.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <img src="/synced.svg" alt="Synced" className="w-full h-full" />
+              </div>
+              <h3>Synced</h3>
+              <p>Telegram lets you access your chats from multiple devices.</p>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* 特性部分 */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">快速</h3>
-                <p className="text-gray-600">Telegram 提供最快的消息传递速度</p>
+      {/* 新闻部分 */}
+      <div className="news-section">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-16">Recent News</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="#" className="news-card">
+              <img src="/news1.jpg" alt="News 1" />
+              <div className="news-content">
+                <div className="news-date">Jun 3</div>
+                <h3 className="news-title">Direct Messages for Channels, Voice Trimming, Topic Tabs and HD Photos</h3>
+                <p className="news-excerpt">In today's update, we add new ways for users to start conversations with their favorite channels...</p>
               </div>
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">安全</h3>
-                <p className="text-gray-600">端到端加密确保您的消息安全</p>
+            </a>
+            <a href="#" className="news-card">
+              <img src="/news2.jpg" alt="News 2" />
+              <div className="news-content">
+                <div className="news-date">May 8</div>
+                <h3 className="news-title">Gift Marketplace, Posting Several Stories at Once, Auto-Translate For Channels</h3>
+                <p className="news-excerpt">Introducing Telegram's second major update in just 8 days! You can now safely buy or sell collectible gifts...</p>
               </div>
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">免费</h3>
-                <p className="text-gray-600">完全免费，无广告，无订阅</p>
-              </div>
-            </div>
+            </a>
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
 
       {/* 页脚 */}
-      <footer className="bg-gray-100 py-8">
-        <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>© 2024 Telegram. 保留所有权利。</p>
+      <footer className="footer">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="footer-column">
+              <h5>About</h5>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Press</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h5>Mobile Apps</h5>
+              <ul>
+                <li><a href="#">iPhone/iPad</a></li>
+                <li><a href="#">Android</a></li>
+                <li><a href="#">Mobile Web</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h5>Desktop Apps</h5>
+              <ul>
+                <li><a href="#">PC/Mac/Linux</a></li>
+                <li><a href="#">macOS</a></li>
+                <li><a href="#">Web-browser</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h5>Platform</h5>
+              <ul>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Translations</a></li>
+                <li><a href="#">Instant View</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer-copyright">
+            <p>© 2024 Telegram. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
