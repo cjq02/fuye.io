@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useEffect } from 'react'
 import './home.css'
+import logoImg from '../../assets/img/logo.png'
 
 /**
  * 首页组件
@@ -19,7 +20,7 @@ function Home(): React.ReactElement {
       {/* Logo 部分 */}
       <div className="logo-section">
         <div className="container mx-auto px-4">
-          <img src="/assets/img/logo.png" alt="Telegram" className="h-24 mx-auto" />
+          <img src={logoImg} alt="Telegram" className="h-24 mx-auto" />
           <h1>a new era of messaging</h1>
         </div>
       </div>
