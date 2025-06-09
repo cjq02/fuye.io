@@ -39,10 +39,13 @@
   margin-bottom: 1rem;
 }
 
-.logo-section h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
+.logo-section h1:last-child {
+  color: #6b7280 !important;
+  /* text-gray-500 */
+  font-size: 1.2rem !important;
+  /* text-2xl */
+  margin-top: 1.5rem !important;
+  /* mt-8 */
 }
 
 /* 下载部分样式 */
@@ -156,7 +159,7 @@
 /* 页脚样式 */
 .footer {
   background-color: var(--telegram-gray);
-  padding: 3rem 0;
+  height: 100px;
 }
 
 .footer-column h5 {
@@ -209,4 +212,42 @@
   .news-card {
     margin-bottom: 2rem;
   }
+}
+
+/* 隐藏视频进度条 */
+video::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+video::-webkit-media-controls-progress-bar {
+  display: none !important;
+}
+
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+/* 自定义视频控制栏样式 */
+video::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+video::-webkit-media-controls-play-button {
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+}
+
+video::-webkit-media-controls-mute-button {
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+}
+
+/* 视频尺寸控制 */
+.video-section video {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
 }
