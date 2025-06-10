@@ -1,16 +1,16 @@
 /* eslint-disable no-undef */
 import React, { useEffect } from 'react'
-import './home.css'
-import logoImg from '../../assets/img/logo.png'
-import coverImg1 from '../../assets/img/hom-cover1jpg.jpg'
-import coverImg2 from '../../assets/img/home-cover2.jpg'
-import mainVideo from '../../assets/video/t_main_Android_demo_2x.mp4'
+import '@/pages/home/home.css'
+import logoImg from '@/assets/img/logo.png'
+import coverImg1 from '@/assets/img/hom-cover1jpg.jpg'
+import coverImg2 from '@/assets/img/home-cover2.jpg'
+import mainVideo from '@/assets/video/t_main_Android_demo_2x.mp4'
 
 // 导入新功能的图标
-import iconFast from '../../assets/svg/icon_fast.svg'
-import iconSecure from '../../assets/svg/icon_secure.svg'
-import iconPrivacy from '../../assets/svg/icon_privacy.svg'
-import iconSync from '../../assets/svg/icon_sync.svg'
+import iconChat from '@/assets/svg/chat.svg'
+import iconShare from '@/assets/svg/share.svg'
+import iconPrivacy from '@/assets/svg/secure.svg'
+import iconSync from '@/assets/svg/sync.svg'
 
 /**
  * 首页组件
@@ -83,12 +83,12 @@ function Home(): React.ReactElement {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">核心功能</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center">
-              <img src={iconFast} alt="高效沟通" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconChat} alt="高效沟通" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-gray-700">高效沟通</h3>
               <p className="text-gray-600">随时随地，与朋友家人畅快聊天，信息即时送达。</p>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center">
-              <img src={iconSecure} alt="轻松分享" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconShare} alt="轻松分享" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-gray-700">轻松分享</h3>
               <p className="text-gray-600">图片、视频、文件，一键分享生活精彩瞬间。</p>
             </div>
