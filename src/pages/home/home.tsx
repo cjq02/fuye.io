@@ -14,7 +14,7 @@ function Home(): React.ReactElement {
   useEffect(() => {
     // 设置页面标题
     if (typeof document !== 'undefined') {
-      document.title = 'Telegram Messenger'
+      document.title = '富业'
     }
   }, [])
 
@@ -23,7 +23,14 @@ function Home(): React.ReactElement {
       {/* Logo 部分 */}
       <div className="logo-section">
         <div className="container mx-auto px-4">
-          <img src={logoImg} alt="Telegram" className="h-24 mx-auto" />
+          <a
+            href="https://im.fuye.io/app/index.php?i=1&c=entry&a=site&m=mdkeji_im&do=Index&state=Index"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <img src={logoImg} alt="Telegram" className="h-36 mx-auto" />
+          </a>
           <h1>FUYE.IO</h1>
           <h1 className="subtitle">信息时代的新纪元</h1>
         </div>

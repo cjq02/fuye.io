@@ -35,8 +35,7 @@
 }
 
 .logo-section img {
-  height: 6rem;
-  margin-bottom: 1rem;
+  margin: 2rem auto;
 }
 
 .logo-section h1:last-child {
