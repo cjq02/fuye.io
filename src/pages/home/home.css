@@ -193,22 +193,23 @@ video::-webkit-media-controls-mute-button {
 
 @keyframes breathing {
   0% {
-    text-shadow: 0 0 20px rgba(147, 51, 234, 0.5),
-      0 0 40px rgba(147, 51, 234, 0.3),
-      0 0 60px rgba(147, 51, 234, 0.2);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3),
+      0 0 20px rgba(255, 215, 0, 0.2);
+    color: #000000;
   }
 
   50% {
-    text-shadow: 0 0 40px rgba(147, 51, 234, 0.8),
-      0 0 80px rgba(147, 51, 234, 0.5),
-      0 0 120px rgba(147, 51, 234, 0.3),
-      0 0 160px rgba(147, 51, 234, 0.2);
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+      0 0 60px rgba(255, 215, 0, 0.6),
+      0 0 90px rgba(255, 215, 0, 0.4),
+      0 0 120px rgba(255, 215, 0, 0.2);
+    color: #FFD700;
   }
 
   100% {
-    text-shadow: 0 0 20px rgba(147, 51, 234, 0.5),
-      0 0 40px rgba(147, 51, 234, 0.3),
-      0 0 60px rgba(147, 51, 234, 0.2);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3),
+      0 0 20px rgba(255, 215, 0, 0.2);
+    color: #000000;
   }
 }
 
@@ -250,5 +251,5 @@ video::-webkit-media-controls-mute-button {
 }
 
 .animate-breathing {
-  animation: breathing 2s ease-in-out infinite;
+  animation: breathing 5s ease-in-out infinite;
 }
