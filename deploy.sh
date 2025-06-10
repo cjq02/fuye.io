@@ -41,7 +41,7 @@ log "开始部署流程..."
 # 1. 拉取代码
 log "正在拉取最新代码..."
 cd /var/www/fuye.io || handle_error "无法进入项目目录"
-git pull origin main || handle_error "git pull 失败"
+git pull origin master || handle_error "git pull 失败"
 
 # 2. 安装依赖（如果需要）
 if [ "$INSTALL_DEPS" = true ]; then
