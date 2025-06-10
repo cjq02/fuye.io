@@ -7,10 +7,10 @@ import coverImg2 from '../../assets/img/home-cover2.jpg'
 import mainVideo from '../../assets/video/t_main_Android_demo_2x.mp4'
 
 // 导入新功能的图标
-import iconFast from '../../assets/img/icon_fast.svg'
-import iconSecure from '../../assets/img/icon_secure.svg'
-import iconPrivacy from '../../assets/img/icon_privacy.svg'
-import iconSync from '../../assets/img/icon_sync.svg'
+import iconFast from '../../assets/svg/icon_fast.svg'
+import iconSecure from '../../assets/svg/icon_secure.svg'
+import iconPrivacy from '../../assets/svg/icon_privacy.svg'
+import iconSync from '../../assets/svg/icon_sync.svg'
 
 /**
  * 首页组件
@@ -38,7 +38,7 @@ function Home(): React.ReactElement {
             <img src={logoImg} alt="Telegram" className="h-36 mx-auto" />
           </a>
           <h1>FUYE.IO</h1>
-          <h1 className="subtitle">信息时代的新纪元</h1>
+          <h1 className="subtitle">开启智能社交新体验</h1>
         </div>
       </div>
 
@@ -77,17 +77,46 @@ function Home(): React.ReactElement {
         </div>
       </div>
 
+      {/* 核心功能部分 */}
+      <div className="features-section py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">核心功能</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center">
+              <img src={iconFast} alt="高效沟通" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">高效沟通</h3>
+              <p className="text-gray-600">随时随地，与朋友家人畅快聊天，信息即时送达。</p>
+            </div>
+            <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center">
+              <img src={iconSecure} alt="轻松分享" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">轻松分享</h3>
+              <p className="text-gray-600">图片、视频、文件，一键分享生活精彩瞬间。</p>
+            </div>
+            <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center">
+              <img src={iconPrivacy} alt="数据安全" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">数据安全</h3>
+              <p className="text-gray-600">多重加密保护，确保您的隐私和数据安全。</p>
+            </div>
+            <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center">
+              <img src={iconSync} alt="多端同步" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">多端同步</h3>
+              <p className="text-gray-600">手机、平板、电脑，聊天记录实时同步。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* 行动呼吁部分 */}
       <div className="cta-section py-20 bg-blue-600 text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8">加入富业，开始您的数字旅程！</h2>
+          <h2 className="text-4xl font-bold mb-8">即刻加入富业，享受无缝沟通！</h2>
           <a
             href="https://im.fuye.io/app/index.php?i=1&c=entry&a=site&m=mdkeji_im&do=Index&state=Index"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-blue-600 text-xl font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-gray-100 transition duration-300"
           >
-            立即开始
+            立即体验
           </a>
         </div>
       </div>
