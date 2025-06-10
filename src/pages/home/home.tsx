@@ -40,7 +40,7 @@ function Home(): React.ReactElement {
           >
             <img src={logoImg} alt="Telegram" className="h-36 mx-auto animate-fade-in" />
           </a>
-          <h1 className="text-6xl font-extrabold animate-fade-in-delay animate-breathing">FUYE.IO</h1>
+          <h1 className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing">FUYE.IO</h1>
           <h1 className="subtitle animate-slide-up">开启智能社交新体验</h1>
         </div>
       </div>

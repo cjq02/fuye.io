@@ -193,21 +193,40 @@ video::-webkit-media-controls-mute-button {
 
 @keyframes breathing {
   0% {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3),
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+      0 0 10px rgba(255, 215, 0, 0.3),
       0 0 20px rgba(255, 215, 0, 0.2);
     color: #000000;
   }
 
-  50% {
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+  30% {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(255, 215, 0, 0.8),
       0 0 60px rgba(255, 215, 0, 0.6),
       0 0 90px rgba(255, 215, 0, 0.4),
       0 0 120px rgba(255, 215, 0, 0.2);
     color: #FFD700;
   }
 
+  40% {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(255, 215, 0, 0.8),
+      0 0 60px rgba(255, 215, 0, 0.6),
+      0 0 90px rgba(255, 215, 0, 0.4),
+      0 0 120px rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+  }
+
+  70% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+      0 0 10px rgba(255, 215, 0, 0.3),
+      0 0 20px rgba(255, 215, 0, 0.2);
+    color: #000000;
+  }
+
   100% {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3),
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+      0 0 10px rgba(255, 215, 0, 0.3),
       0 0 20px rgba(255, 215, 0, 0.2);
     color: #000000;
   }
