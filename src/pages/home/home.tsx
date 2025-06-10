@@ -37,7 +37,7 @@ function Home(): React.ReactElement {
       </div>
 
       {/* 视频部分 */}
-      <div className="video-section py-16 bg-gray-50">
+      <div className="video-section py-16">
         <div className="container mx-auto px-4">
           <div className="w-1/2 mx-auto">
             <video
@@ -72,12 +72,8 @@ function Home(): React.ReactElement {
       </div>
 
       {/* 页脚部分 */}
-      <footer className="footer bg-gray-100 py-12">
-        <div className="container mx-auto px-4">
-          <div className="footer-copyright mt-12 pt-8 border-t border-gray-200 text-center">
-            <p className="text-gray-600">© 2025 富业集团. 保留所有权利.</p>
-          </div>
-        </div>
+      <footer className="footer flex items-center justify-center">
+        <p className="text-gray-600">© 2025 富业集团. 保留所有权利.</p>
       </footer>
     </div>
   )
