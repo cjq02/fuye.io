@@ -270,5 +270,5 @@ video::-webkit-media-controls-mute-button {
 }
 
 .animate-breathing {
-  animation: breathing 5s ease-in-out infinite;
+  animation: breathing 8s ease-in-out infinite;
 }

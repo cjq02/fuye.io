@@ -57,7 +57,10 @@ pnpm build || handle_error "项目构建失败"
 
 # 4. 重启 nginx 配置
 log "正在重启 nginx 配置..."
-sudo nginx -t && sudo nginx -s reload -c /etc/nginx/conf.d/fuye.io.conf || handle_error "nginx 配置重启失败"
+if ! sudo nginx -t; then
+    handle_error "nginx 配置检查失败"
+fi
+sudo systemctl reload nginx || handle_error "nginx 配置重启失败"
 
 # 部署完成
 log "部署完成！" 
