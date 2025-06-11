@@ -43,7 +43,7 @@ function Home(): React.ReactElement {
           <h1 className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing">FUYE.IO</h1>
           <p className="text-lg text-gray-600 mt-4">拓展安全私域 裂变社交价值</p>
           <p className="text-lg text-gray-600 mt-2">不封群 不实名 不翻墙</p>
-          <p className="text-lg text-gray-600 mt-2">向Telegram致敬 但富业更适合做业务</p>
+          <p className="text-lg text-gray-600 mt-2">向Telegram致敬 但富业<a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 ml-1 mr-1">fuye.io</a>更适合做业务</p>
         </div>
       </div>
 

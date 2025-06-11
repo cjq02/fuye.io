@@ -104,7 +104,7 @@
 /* 响应式布局 */
 @media (max-width: 768px) {
   .logo-section h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .download-card {
