@@ -8,9 +8,9 @@ import mainVideo from '@/assets/video/t_main_Android_demo_2x.mp4'
 
 // 导入新功能的图标
 import iconChat from '@/assets/svg/chat.svg'
-import iconShare from '@/assets/svg/share.svg'
-import iconPrivacy from '@/assets/svg/secure.svg'
-import iconSync from '@/assets/svg/sync.svg'
+import iconBriefcase from '@/assets/svg/briefcase.svg'
+import iconMoney from '@/assets/svg/money.svg'
+import iconTool from '@/assets/svg/tool.svg'
 
 // 常量定义
 const APP_URL = 'https://im.fuye.io/app/index.php?i=1&c=entry&a=site&m=mdkeji_im&do=Index&state=Index'
@@ -107,7 +107,7 @@ function Home(): React.ReactElement {
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-4">
-              <img src={iconShare} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconBriefcase} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold mb-4 text-gray-700">群组功能</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
@@ -133,7 +133,7 @@ function Home(): React.ReactElement {
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-5">
-              <img src={iconPrivacy} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconMoney} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold mb-4 text-gray-700">裂变提现</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
@@ -155,7 +155,7 @@ function Home(): React.ReactElement {
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-6">
-              <img src={iconSync} alt="免费工具" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconTool} alt="免费工具" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold mb-4 text-gray-700">免费工具</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
