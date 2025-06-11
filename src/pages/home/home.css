@@ -372,3 +372,125 @@ video::-webkit-media-controls-mute-button {
   animation: float-6 3s ease-in-out infinite;
   animation-delay: 1s;
 }
+
+/* 文字动画效果 */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-text-1 {
+  animation: slideInFromLeft 1.2s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.animate-text-1:hover {
+  transform: translateX(10px);
+  color: #00a2ff;
+}
+
+.animate-text-2 {
+  animation: fadeInUp 1.2s ease-out 0.5s forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.animate-text-2:hover {
+  transform: translateY(-5px);
+  color: #00ff80;
+}
+
+.animate-text-3 {
+  animation: slideInFromRight 1.2s ease-out 1s forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.animate-text-3:hover {
+  transform: translateX(-10px);
+  color: #00a2ff;
+}
+
+.animate-text-3 a {
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.animate-text-3 a:hover {
+  color: #00a2ff !important;
+  animation: pulse 1s infinite;
+}
+
+.animate-text-3 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #00a2ff;
+  transition: width 0.5s ease;
+}
+
+.animate-text-3 a:hover::after {
+  width: 100%;
+}
+
+/* 添加文字阴影效果 */
+.animate-text-1,
+.animate-text-2,
+.animate-text-3 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animate-text-1:hover,
+.animate-text-2:hover,
+.animate-text-3:hover {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
