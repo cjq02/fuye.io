@@ -41,7 +41,7 @@ function Home(): React.ReactElement {
             <img src={logoImg} alt="Telegram" className="h-36 mx-auto animate-fade-in" />
           </a>
           <h1 className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing">FUYE.IO</h1>
-          <p className="text-lg text-gray-600 mt-4">拓展安全私域 裂变社交价值</p>
+          <p className="text-lg text-gray-600 mt-10">拓展安全私域 裂变社交价值</p>
           <p className="text-lg text-gray-600 mt-2">不封群 不实名 不翻墙</p>
           <p className="text-lg text-gray-600 mt-2">向Telegram致敬 但富业<a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 ml-1 mr-1">fuye.io</a>更适合做业务</p>
         </div>
@@ -89,23 +89,86 @@ function Home(): React.ReactElement {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-3">
               <img src={iconChat} alt="高效沟通" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">高效沟通</h3>
-              <p className="text-gray-600">无需实名，告别VPN，可Google/Telegram一键登录，支持私聊、群聊、语音、视频。</p>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">高效沟通</h3>
+              <div className="space-y-3">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-1">无需实名</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-2">告别VPN</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-2">可 Google / Telegram 一键登录</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">私聊</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-4">群聊</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-5">语音</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-6">视频</span>
+                </div>
+              </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-4">
               <img src={iconShare} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">群组功能</h3>
-              <p className="text-gray-600">群红包、手气红包、群转账、自动回复、管理员、广告链接、群成员加好友限制等丰富功能。</p>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">群组功能</h3>
+              <div className="space-y-4">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-1">群红包</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-2">手气红包</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-3">群转账</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-4">自动回复</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-5">管理员</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-6">广告链接</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm animate-float-1">群成员加好友限制</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-2">邀请码</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">密码</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-4">付费</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-5">审核</span>
+                </div>
+                <p className="text-gray-600 animate-float-6">还有更多丰富功能......</p>
+              </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-5">
               <img src={iconPrivacy} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">裂变提现</h3>
-              <p className="text-gray-600">专属个人链接与二维码，用户邀请分佣，消费挂钩，群主持续收益，提现免实名保护隐私。</p>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">裂变提现</h3>
+              <div className="space-y-4">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm animate-float-1">专属个人链接</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm animate-float-2">专属二维码</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-3">用户邀请分佣</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-4">消费挂钩</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm animate-float-5">利于群组推广</span>
+                  <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm animate-float-6">群主持续收益</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm animate-float-1">提现免实名</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm animate-float-2">保护隐私</span>
+                </div>
+              </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-6">
               <img src={iconSync} alt="免费工具" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">免费工具</h3>
-              <p className="text-gray-600">为您提供多款网络工具，轻松驾驭网络世界，提升效率，秒变大神。</p>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">免费工具</h3>
+              <div className="space-y-4">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">为您提供多款网络工具</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-4">轻松驾驭网络世界</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm animate-float-5">提升效率</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-6">秒变大神</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -114,8 +177,8 @@ function Home(): React.ReactElement {
       {/* 行动呼吁部分 */}
       <div className="cta-section py-20 bg-blue-600 text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8">轻松连接各类行业</h2>
-          <h2 className="text-4xl font-bold mb-8">不下APP也可使用</h2>
+          <h2 className="text-4xl font-bold mb-8 tracking-widest">轻松链接各类行业</h2>
+          <h2 className="text-4xl font-bold mb-8 tracking-widest">不下APP也可使用</h2>
           <a
             href={APP_URL}
             target="_blank"
