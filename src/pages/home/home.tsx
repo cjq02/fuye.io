@@ -92,17 +92,17 @@ function Home(): React.ReactElement {
               <h3 className="text-2xl font-semibold mb-4 text-gray-700">高效沟通</h3>
               <div className="space-y-3">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-1">无需实名</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-2">告别VPN</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-1 inline-block">无需实名</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-2 inline-block">告别VPN</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-2">可 Google / Telegram 一键登录</span>
+                  <span className="px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-sm animate-float-2 inline-block">可 Google / Telegram 一键登录</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">私聊</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-4">群聊</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-5">语音</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-6">视频</span>
+                  <span className="px-3 py-1 bg-fuchsia-100 text-fuchsia-600 rounded-full text-sm animate-float-3 inline-block">私聊</span>
+                  <span className="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm animate-float-4 inline-block">群聊</span>
+                  <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm animate-float-5 inline-block">语音</span>
+                  <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-full text-sm animate-float-6 inline-block">视频</span>
                 </div>
               </div>
             </div>
