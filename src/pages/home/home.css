@@ -400,7 +400,7 @@ video::-webkit-media-controls-mute-button {
 
 @keyframes fadeInUp {
   0% {
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
   }
 
@@ -446,13 +446,21 @@ video::-webkit-media-controls-mute-button {
 }
 
 .animate-text-3 {
-  animation: slideInFromRight 1.2s ease-out 1s forwards;
+  animation: fadeInUp 1.2s ease-out forwards;
   opacity: 0;
   transition: all 0.3s ease;
 }
 
+.animate-text-3:nth-of-type(1) {
+  animation-delay: 0.8s;
+}
+
+.animate-text-3:nth-of-type(2) {
+  animation-delay: 1.1s;
+}
+
 .animate-text-3:hover {
-  transform: translateX(-10px);
+  transform: translateY(-5px);
   color: #00a2ff;
 }
 
