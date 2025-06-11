@@ -193,42 +193,40 @@ video::-webkit-media-controls-mute-button {
 
 @keyframes breathing {
   0% {
+    text-shadow: none;
+    color: #00a2ff;
+  }
+
+  25% {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
-      0 0 10px rgba(255, 215, 0, 0.3),
-      0 0 20px rgba(255, 215, 0, 0.2);
-    color: #000000;
+      0 0 20px rgba(0, 136, 204, 0.7),
+      0 0 40px rgba(0, 136, 204, 0.6),
+      0 0 60px rgba(0, 136, 204, 0.5),
+      0 0 80px rgba(0, 136, 204, 0.4);
+    color: #00a2ff;
   }
 
-  30% {
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4),
-      0 0 30px rgba(255, 215, 0, 0.8),
-      0 0 60px rgba(255, 215, 0, 0.6),
-      0 0 90px rgba(255, 215, 0, 0.4),
-      0 0 120px rgba(255, 215, 0, 0.2);
-    color: #FFD700;
-  }
-
-  40% {
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4),
-      0 0 30px rgba(255, 215, 0, 0.8),
-      0 0 60px rgba(255, 215, 0, 0.6),
-      0 0 90px rgba(255, 215, 0, 0.4),
-      0 0 120px rgba(255, 215, 0, 0.2);
-    color: #FFD700;
-  }
-
-  70% {
+  50% {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
-      0 0 10px rgba(255, 215, 0, 0.3),
-      0 0 20px rgba(255, 215, 0, 0.2);
-    color: #000000;
+      0 0 20px rgba(0, 255, 128, 0.7),
+      0 0 40px rgba(0, 255, 128, 0.6),
+      0 0 60px rgba(0, 255, 128, 0.5),
+      0 0 80px rgba(0, 255, 128, 0.4);
+    color: #00ff80;
+  }
+
+  75% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(0, 255, 128, 0.7),
+      0 0 40px rgba(0, 255, 128, 0.6),
+      0 0 60px rgba(0, 255, 128, 0.5),
+      0 0 80px rgba(0, 255, 128, 0.4);
+    color: #00ff80;
   }
 
   100% {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
-      0 0 10px rgba(255, 215, 0, 0.3),
-      0 0 20px rgba(255, 215, 0, 0.2);
-    color: #000000;
+    text-shadow: none;
+    color: #00a2ff;
   }
 }
 
