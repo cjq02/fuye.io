@@ -41,7 +41,9 @@ function Home(): React.ReactElement {
             <img src={logoImg} alt="Telegram" className="h-36 mx-auto animate-fade-in" />
           </a>
           <h1 className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing">FUYE.IO</h1>
-          <h1 className="subtitle animate-slide-up">开启智能社交新体验</h1>
+          <p className="text-lg text-gray-600 mt-4">拓展安全私域 裂变社交价值</p>
+          <p className="text-lg text-gray-600 mt-2">不封群 不实名 不翻墙</p>
+          <p className="text-lg text-gray-600 mt-2">向Telegram致敬 但富业更适合做业务</p>
         </div>
       </div>
 
@@ -88,22 +90,22 @@ function Home(): React.ReactElement {
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-3">
               <img src={iconChat} alt="高效沟通" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-gray-700">高效沟通</h3>
-              <p className="text-gray-600">随时随地，与朋友家人畅快聊天，信息即时送达。</p>
+              <p className="text-gray-600">无需实名，告别VPN，可Google/Telegram一键登录，支持私聊、群聊、语音、视频。</p>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-4">
-              <img src={iconShare} alt="轻松分享" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">轻松分享</h3>
-              <p className="text-gray-600">图片、视频、文件，一键分享生活精彩瞬间。</p>
+              <img src={iconShare} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">群组功能</h3>
+              <p className="text-gray-600">群红包、手气红包、群转账、自动回复、管理员、广告链接、群成员加好友限制等丰富功能。</p>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-5">
-              <img src={iconPrivacy} alt="数据安全" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">数据安全</h3>
-              <p className="text-gray-600">多重加密保护，确保您的隐私和数据安全。</p>
+              <img src={iconPrivacy} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">裂变提现</h3>
+              <p className="text-gray-600">专属个人链接与二维码，用户邀请分佣，消费挂钩，群主持续收益，提现免实名保护隐私。</p>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-6">
-              <img src={iconSync} alt="多端同步" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">多端同步</h3>
-              <p className="text-gray-600">手机、平板、电脑，聊天记录实时同步。</p>
+              <img src={iconSync} alt="免费工具" className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-700">免费工具</h3>
+              <p className="text-gray-600">为您提供多款网络工具，轻松驾驭网络世界，提升效率，秒变大神。</p>
             </div>
           </div>
         </div>
@@ -112,7 +114,8 @@ function Home(): React.ReactElement {
       {/* 行动呼吁部分 */}
       <div className="cta-section py-20 bg-blue-600 text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8">即刻加入富业，享受无缝沟通！</h2>
+          <h2 className="text-4xl font-bold mb-8">轻松连接各类行业</h2>
+          <h2 className="text-4xl font-bold mb-8">不下APP也可使用</h2>
           <a
             href={APP_URL}
             target="_blank"

@@ -14,7 +14,7 @@ function NavBar(): React.ReactElement {
   const tabs = [
     {
       key: '/',
-      title: '首页',
+      title: '富业',
     },
   ]
 
