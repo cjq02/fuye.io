@@ -52,12 +52,14 @@ function Home(): React.ReactElement {
         <div className="container mx-auto px-4">
           <div className="w-1/2 mx-auto animate-fade-in-delay-2">
             <video
-              className="w-full rounded-lg shadow-xl"
-              controls
+              className="w-full rounded-lg shadow-xl pointer-events-none"
               autoPlay
               muted
               loop
               playsInline
+              disablePictureInPicture
+              disableRemotePlayback
+              controlsList="nodownload nofullscreen noremoteplayback"
             >
               <source src={mainVideo} type="video/mp4" />
               您的浏览器不支持视频播放
