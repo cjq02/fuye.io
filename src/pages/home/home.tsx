@@ -8,8 +8,8 @@ import mainVideo from '@/assets/video/t_main_Android_demo_2x.mp4'
 
 // 导入新功能的图标
 import iconChat from '@/assets/svg/chat.svg'
-import iconBriefcase from '@/assets/svg/briefcase.svg'
-import iconMoney from '@/assets/svg/money.svg'
+import iconGroup from '@/assets/img/group.jpg'
+import iconCash from '@/assets/img/cash.jpg'
 import iconTool from '@/assets/svg/tool.svg'
 
 // 常量定义
@@ -43,8 +43,6 @@ function Home(): React.ReactElement {
           <h1 className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing">FUYE.IO</h1>
           <p className="text-lg text-gray-600 mt-10 animate-text-1">拓展安全私域 裂变社交价值</p>
           <p className="text-lg text-gray-600 mt-2 animate-text-2">不封群 不实名 不翻墙</p>
-          <p className="text-lg text-gray-600 mt-2 animate-text-3">向Telegram致敬</p>
-          <p className="text-lg text-gray-600 mt-2 animate-text-3">但富业<a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 ml-1 mr-1">fuye.io</a>更适合做业务</p>
         </div>
       </div>
 
@@ -75,11 +73,12 @@ function Home(): React.ReactElement {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="cover-item text-center">
               <img src={coverImg1} alt="封面图片1" className="w-full h-auto rounded-lg shadow-lg mb-4" />
-              <p className="text-lg text-gray-700">探索无限可能</p>
+              <p className="text-lg text-gray-700">向Telegram致敬</p>
+              <p className="text-lg text-gray-700">但富业<a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 ml-1 mr-1">fuye.io</a>更适合做业务</p>
             </div>
             <div className="cover-item text-center">
               <img src={coverImg2} alt="封面图片2" className="w-full h-auto rounded-lg shadow-lg mb-4" />
-              <p className="text-lg text-gray-700">连接世界每个角落</p>
+              <p className="text-lg text-gray-700"><span>轻松连接各类行业</span><span className='ml-4'>不下APP也可使用</span></p>
             </div>
           </div>
         </div>
@@ -110,7 +109,7 @@ function Home(): React.ReactElement {
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-4">
-              <img src={iconBriefcase} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconGroup} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold mb-4 text-gray-700">群组功能</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
@@ -136,7 +135,7 @@ function Home(): React.ReactElement {
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-5">
-              <img src={iconMoney} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
+              <img src={iconCash} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold mb-4 text-gray-700">裂变提现</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
