@@ -179,8 +179,8 @@ function Home(): React.ReactElement {
       {/* 行动呼吁部分 */}
       <div className="cta-section py-20 bg-blue-600 text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 tracking-widest">轻松链接各类行业</h2>
-          <h2 className="text-4xl font-bold mb-8 tracking-widest">不下APP也可使用</h2>
+          <h2 className="text-4xl font-bold mb-8">即刻加入富业</h2>
+          <h2 className="text-4xl font-bold mb-8">享受无缝沟通</h2>
           <a
             href={APP_URL}
             target="_blank"
