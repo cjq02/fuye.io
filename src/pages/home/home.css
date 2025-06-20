@@ -7,22 +7,6 @@
   --telegram-gray: #f5f5f5;
 }
 
-/* 导航栏样式 */
-.navbar {
-  background-color: var(--telegram-light);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.navbar a {
-  color: #666;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: var(--telegram-blue);
-}
-
 /* 主要内容区域样式 */
 .main-content {
   padding-top: 4rem;
@@ -35,7 +19,7 @@
 }
 
 .logo-section img {
-  margin: 2rem auto;
+  margin: 5rem auto;
 }
 
 .logo-section h1:last-child {
@@ -501,4 +485,198 @@ video::-webkit-media-controls-mute-button {
 .animate-text-2:hover,
 .animate-text-3:hover {
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 霓虹闪烁+缩放动画 */
+@keyframes neon-flash {
+  0% {
+    box-shadow: 0 0 12px #00eaff, 0 0 24px #00eaff, 0 0 48px #00eaff, 0 0 96px #00eaff;
+    filter: brightness(1.1) saturate(1.2);
+    transform: scale(1);
+  }
+
+  20% {
+    box-shadow: 0 0 24px #ff00ea, 0 0 48px #ff00ea, 0 0 96px #ff00ea, 0 0 128px #ff00ea;
+    filter: brightness(1.2) saturate(1.4);
+    transform: scale(1.08);
+  }
+
+  40% {
+    box-shadow: 0 0 32px #ffe600, 0 0 64px #ffe600, 0 0 128px #ffe600, 0 0 160px #ffe600;
+    filter: brightness(1.3) saturate(1.6);
+    transform: scale(1.12);
+  }
+
+  60% {
+    box-shadow: 0 0 24px #00ffae, 0 0 48px #00ffae, 0 0 96px #00ffae, 0 0 128px #00ffae;
+    filter: brightness(1.2) saturate(1.4);
+    transform: scale(1.08);
+  }
+
+  80% {
+    box-shadow: 0 0 32px #00eaff, 0 0 64px #00eaff, 0 0 128px #00eaff, 0 0 160px #00eaff;
+    filter: brightness(1.3) saturate(1.6);
+    transform: scale(1.12);
+  }
+
+  100% {
+    box-shadow: 0 0 12px #00eaff, 0 0 24px #00eaff, 0 0 48px #00eaff, 0 0 96px #00eaff;
+    filter: brightness(1.1) saturate(1.2);
+    transform: scale(1);
+  }
+}
+
+.animate-neon-flash {
+  animation: neon-flash 2.2s linear infinite;
+}
+
+/* FUYE.IO 霓虹灯光文字动画 */
+@keyframes neon-text-glow {
+  0% {
+    text-shadow:
+      0 2px 8px #00ffae,
+      0 4px 16px #00ffae,
+      0 8px 32px #00ffae,
+      0 12px 64px #00ffae,
+      0 0 2px #fff,
+      2px 4px 2px #22ffbb88,
+      4px 8px 8px #22ffbb66;
+    filter: brightness(1.1);
+    transform: scale(1) perspective(180px) rotateX(0deg);
+  }
+
+  12.5% {
+    text-shadow:
+      0 2px 8px #00ffae,
+      0 4px 16px #00ffae,
+      0 8px 32px #00ffae,
+      0 12px 64px #00ffae,
+      0 0 2px #fff,
+      2px 4px 2px #22ffbb88,
+      4px 8px 8px #22ffbb66;
+    filter: brightness(1.1);
+    transform: scale(1) perspective(180px) rotateX(0deg);
+  }
+
+  20% {
+    text-shadow:
+      0 2px 12px #ff00ea,
+      0 4px 24px #ff00ea,
+      0 8px 48px #ff00ea,
+      0 12px 96px #ff00ea,
+      0 0 2px #fff,
+      2px 4px 2px #a020f088,
+      4px 8px 8px #a020f066;
+    filter: brightness(1.2);
+    transform: scale(1.18) perspective(180px) rotateX(6deg);
+  }
+
+  30% {
+    text-shadow:
+      0 2px 16px #ff7f00,
+      0 4px 32px #ff7f00,
+      0 8px 64px #ff7f00,
+      0 12px 128px #ff7f00,
+      0 0 2px #fff,
+      2px 4px 2px #ffb34788,
+      4px 8px 8px #ffb34766;
+    filter: brightness(1.25);
+    transform: scale(1.26) perspective(180px) rotateX(8deg);
+  }
+
+  40% {
+    text-shadow:
+      0 2px 24px #00eaff,
+      0 4px 48px #00eaff,
+      0 8px 96px #00eaff,
+      0 12px 128px #00eaff,
+      0 0 2px #fff,
+      2px 4px 2px #2299ff88,
+      4px 8px 8px #2299ff66;
+    filter: brightness(1.35);
+    transform: scale(1.35) perspective(180px) rotateX(10deg);
+  }
+
+  50% {
+    text-shadow:
+      0 2px 32px #00eaff,
+      0 4px 64px #00eaff,
+      0 8px 128px #00eaff,
+      0 12px 160px #00eaff,
+      0 0 2px #fff,
+      2px 4px 2px #2299ff88,
+      4px 8px 8px #2299ff66;
+    filter: brightness(1.4);
+    transform: scale(1.35) perspective(180px) rotateX(10deg);
+  }
+
+  60% {
+    text-shadow:
+      0 2px 24px #ff4fa3,
+      0 4px 48px #ff4fa3,
+      0 8px 96px #ff4fa3,
+      0 12px 128px #ff4fa3,
+      0 0 2px #fff,
+      2px 4px 2px #ffb6c188,
+      4px 8px 8px #ffb6c166;
+    filter: brightness(1.35);
+    transform: scale(1.28) perspective(180px) rotateX(8deg);
+  }
+
+  75% {
+    text-shadow:
+      0 2px 32px #00eaff,
+      0 4px 64px #00eaff,
+      0 8px 128px #00eaff,
+      0 12px 160px #00eaff,
+      0 0 2px #fff,
+      2px 4px 2px #2299ff88,
+      4px 8px 8px #2299ff66;
+    filter: brightness(1.4);
+    transform: scale(1.35) perspective(180px) rotateX(10deg);
+  }
+
+  87.5% {
+    text-shadow:
+      0 2px 8px #00ffae,
+      0 4px 16px #00ffae,
+      0 8px 32px #00ffae,
+      0 12px 64px #00ffae,
+      0 0 2px #fff,
+      2px 4px 2px #22ffbb88,
+      4px 8px 8px #22ffbb66;
+    filter: brightness(1.1);
+    transform: scale(1) perspective(180px) rotateX(0deg);
+  }
+
+  100% {
+    text-shadow:
+      0 2px 8px #00ffae,
+      0 4px 16px #00ffae,
+      0 8px 32px #00ffae,
+      0 12px 64px #00ffae,
+      0 0 2px #fff,
+      2px 4px 2px #22ffbb88,
+      4px 8px 8px #22ffbb66;
+    filter: brightness(1.1);
+    transform: scale(1) perspective(180px) rotateX(0deg);
+  }
+}
+
+.neon-text {
+  animation: neon-text-glow 4s linear infinite;
+  background: transparent !important;
+  will-change: transform, filter, text-shadow;
+}
+
+.neon-text-btn {
+  text-shadow:
+    0 0 8px #fff,
+    0 0 16px #00eaff,
+    0 2px 4px #222,
+    1px 1px 2px #fff,
+    0 0 2px #fff;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.08em;
+  filter: brightness(1.15) saturate(1.2);
 }
