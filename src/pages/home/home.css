@@ -680,3 +680,76 @@ video::-webkit-media-controls-mute-button {
   letter-spacing: 0.08em;
   filter: brightness(1.15) saturate(1.2);
 }
+
+@keyframes wave-text {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(-6px);
+  }
+
+  20% {
+    transform: translateY(-12px);
+  }
+
+  30% {
+    transform: translateY(-6px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+
+  60% {
+    transform: translateY(12px);
+  }
+
+  70% {
+    transform: translateY(6px);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(-6px);
+  }
+}
+
+.wave-text {
+  display: inline-block;
+  animation: wave-text 2s infinite linear;
+}
+
+@keyframes wave-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  80% {
+    background-position: 100% 50%;
+  }
+
+  99.999% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.wave-bg {
+  background: linear-gradient(120deg, #22caff, #1ba6e0, #7fdbff, #22caff, #1ba6e0, #22caff, #7fdbff);
+  background-size: 600% 600%;
+  animation: wave-bg 5s linear infinite;
+}

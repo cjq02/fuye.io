@@ -38,8 +38,8 @@ function Home(): React.ReactElement {
         href={APP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed left-1/2 top-20 z-50 text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg transition-all duration-200"
-        style={{ transform: 'translateX(-50%)', background: '#22caff' }}
+        className="fixed left-1/2 top-20 z-50 text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg transition-all duration-200 wave-bg"
+        style={{ transform: 'translateX(-50%)' }}
       >
         立即体验
       </a>
