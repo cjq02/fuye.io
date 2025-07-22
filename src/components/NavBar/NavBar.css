@@ -27,3 +27,19 @@
 .adm-tabs-tab {
   margin: 0;
 }
+
+.navbar-telegram-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #0088cc;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-telegram-btn:hover {
+  color: #005f8c;
+}

@@ -60,7 +60,7 @@ function Home(): React.ReactElement {
             style={{ background: 'transparent', cursor: 'pointer' }}
             onClick={() => { window.open(APP_URL, '_blank', 'noopener,noreferrer') }}
           >
-            FUYE.IO
+            {/* FUYE.IO 已去除 */}
           </h1>
           <p className="text-lg text-gray-600 mt-10 animate-text-1">拓展安全私域 裂变社交价值</p>
           <p className="text-lg text-gray-600 mt-2 animate-text-2">不封群 不实名 不翻墙</p>
