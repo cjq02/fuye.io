@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useEffect } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 import '@/pages/home/home.css'
 import logoImg from '@/assets/img/logo.png'
 import coverImg1 from '@/assets/img/hom-cover1jpg.jpg'
@@ -20,11 +21,10 @@ const APP_URL = 'https://im.fuye.io/app/index.php?i=1&c=entry&a=site&m=mdkeji_im
  * @returns {React.ReactElement} 渲染的首页组件
  */
 function Home(): React.ReactElement {
+  const { t } = useLanguage()
+  
   useEffect(() => {
-    // 设置页面标题
-    if (typeof document !== 'undefined') {
-      document.title = '富业'
-    }
+    // 页面标题已在 LanguageContext 中设置
   }, [])
 
   return (
@@ -41,7 +41,7 @@ function Home(): React.ReactElement {
         className="fixed left-1/2 top-20 z-50 text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg transition-all duration-200 wave-bg"
         style={{ transform: 'translateX(-50%)' }}
       >
-        立即体验
+        {t('home.experience')}
       </a>
 
       {/* Logo 部分 */}
@@ -62,8 +62,8 @@ function Home(): React.ReactElement {
           >
             {/* FUYE.IO 已去除 */}
           </h1>
-          <p className="text-lg text-gray-600 mt-10 animate-text-1">拓展安全私域 裂变社交价值</p>
-          <p className="text-lg text-gray-600 mt-2 animate-text-2">不封群 不实名 不翻墙</p>
+          <p className="text-lg text-gray-600 mt-10 animate-text-1">{t('home.subtitle1')}</p>
+          <p className="text-lg text-gray-600 mt-2 animate-text-2">{t('home.subtitle2')}</p>
         </div>
       </div>
 
@@ -82,7 +82,7 @@ function Home(): React.ReactElement {
               controlsList="nodownload nofullscreen noremoteplayback"
             >
               <source src={mainVideo} type="video/mp4" />
-              您的浏览器不支持视频播放
+              {t('home.videoNotSupported')}
             </video>
           </div>
         </div>
@@ -94,12 +94,12 @@ function Home(): React.ReactElement {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="cover-item text-center">
               <img src={coverImg1} alt="封面图片1" className="w-full h-auto rounded-lg shadow-lg mb-4" />
-              <p className="text-lg text-gray-700">向Telegram致敬</p>
-              <p className="text-lg text-gray-700">但富业<a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 ml-1 mr-1">fuye.io</a>更适合做业务</p>
+              <p className="text-lg text-gray-700">{t('home.cover1.title')}</p>
+              <p className="text-lg text-gray-700">{t('home.cover1.subtitle')}<a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 ml-1 mr-1">fuye.io</a></p>
             </div>
             <div className="cover-item text-center">
               <img src={coverImg2} alt="封面图片2" className="w-full h-auto rounded-lg shadow-lg mb-4" />
-              <p className="text-lg text-gray-700"><span>轻松连接各类行业</span><span className='ml-4'>不下APP也可使用</span></p>
+              <p className="text-lg text-gray-700"><span>{t('home.cover2.title')}</span><span className='ml-4'>{t('home.cover2.subtitle')}</span></p>
             </div>
           </div>
         </div>
@@ -108,88 +108,88 @@ function Home(): React.ReactElement {
       {/* 核心功能部分 */}
       <div className="features-section py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">核心功能</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">{t('home.features.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-3">
-              <img src={iconChat} alt="高效沟通" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-700">高效沟通</h3>
+              <img src={iconChat} alt={t('home.features.communication.title')} className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">{t('home.features.communication.title')}</h3>
               <div className="space-y-3">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-1 inline-block">无需实名</span>
-                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-2 inline-block">告别VPN</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-1 inline-block">{t('home.features.communication.noRealName')}</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-2 inline-block">{t('home.features.communication.noVPN')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-sm animate-float-2 inline-block">可 Google / Telegram 一键登录</span>
+                  <span className="px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-sm animate-float-2 inline-block">{t('home.features.communication.oneClickLogin')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-fuchsia-100 text-fuchsia-600 rounded-full text-sm animate-float-3 inline-block">私聊</span>
-                  <span className="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm animate-float-4 inline-block">群聊</span>
-                  <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm animate-float-5 inline-block">语音</span>
-                  <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-full text-sm animate-float-6 inline-block">视频</span>
+                  <span className="px-3 py-1 bg-fuchsia-100 text-fuchsia-600 rounded-full text-sm animate-float-3 inline-block">{t('home.features.communication.private')}</span>
+                  <span className="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm animate-float-4 inline-block">{t('home.features.communication.group')}</span>
+                  <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm animate-float-5 inline-block">{t('home.features.communication.voice')}</span>
+                  <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-full text-sm animate-float-6 inline-block">{t('home.features.communication.video')}</span>
                 </div>
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-4">
-              <img src={iconGroup} alt="群组功能" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-700">群组功能</h3>
+              <img src={iconGroup} alt={t('home.features.group.title')} className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">{t('home.features.group.title')}</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-1">群红包</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-2">手气红包</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-3">群转账</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-1">{t('home.features.group.redPacket')}</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-2">{t('home.features.group.luckyPacket')}</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-3">{t('home.features.group.transfer')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-4">自动回复</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-5">管理员</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-6">广告链接</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-4">{t('home.features.group.autoReply')}</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-5">{t('home.features.group.admin')}</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-6">{t('home.features.group.adLink')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm animate-float-1">群成员加好友限制</span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm animate-float-1">{t('home.features.group.memberLimit')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-2">邀请码</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">密码</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-4">付费</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-5">审核</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-2">{t('home.features.group.inviteCode')}</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">{t('home.features.group.password')}</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-4">{t('home.features.group.paid')}</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-5">{t('home.features.group.review')}</span>
                 </div>
-                <p className="text-gray-600 animate-float-6">还有更多丰富功能......</p>
+                <p className="text-gray-600 animate-float-6">{t('home.features.group.more')}</p>
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-5">
-              <img src={iconCash} alt="裂变提现" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-700">裂变提现</h3>
+              <img src={iconCash} alt={t('home.features.cash.title')} className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">{t('home.features.cash.title')}</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm animate-float-1">专属个人链接</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm animate-float-2">专属二维码</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm animate-float-1">{t('home.features.cash.personalLink')}</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm animate-float-2">{t('home.features.cash.qrCode')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-3">用户邀请分佣</span>
-                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-4">消费挂钩</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-3">{t('home.features.cash.inviteCommission')}</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm animate-float-4">{t('home.features.cash.consumption')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm animate-float-5">利于群组推广</span>
-                  <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm animate-float-6">群主持续收益</span>
+                  <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm animate-float-5">{t('home.features.cash.groupPromotion')}</span>
+                  <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm animate-float-6">{t('home.features.cash.continuousIncome')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm animate-float-1">提现免实名</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm animate-float-2">保护隐私</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm animate-float-1">{t('home.features.cash.noRealName')}</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm animate-float-2">{t('home.features.cash.privacy')}</span>
                 </div>
               </div>
             </div>
             <div className="feature-card p-6 bg-gray-50 rounded-lg shadow-md text-center animate-fade-in-delay-6">
-              <img src={iconTool} alt="免费工具" className="h-16 w-16 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-700">免费工具</h3>
+              <img src={iconTool} alt={t('home.features.tools.title')} className="h-16 w-16 mx-auto mb-4" />
+              <h3 className="text-2xl font-semibold mb-4 text-gray-700">{t('home.features.tools.title')}</h3>
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">为您提供多款网络工具</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm animate-float-3">{t('home.features.tools.networkTools')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-4">轻松驾驭网络世界</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm animate-float-4">{t('home.features.tools.easyNetwork')}</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm animate-float-5">提升效率</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-6">秒变大神</span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm animate-float-5">{t('home.features.tools.efficiency')}</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm animate-float-6">{t('home.features.tools.expert')}</span>
                 </div>
               </div>
             </div>
@@ -200,22 +200,22 @@ function Home(): React.ReactElement {
       {/* 行动呼吁部分 */}
       <div className="cta-section py-20 bg-blue-600 text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8">即刻加入富业</h2>
-          <h2 className="text-4xl font-bold mb-8">享受无缝沟通</h2>
+          <h2 className="text-4xl font-bold mb-8">{t('home.cta.title1')}</h2>
+          <h2 className="text-4xl font-bold mb-8">{t('home.cta.title2')}</h2>
           <a
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-blue-600 text-xl font-semibold py-4 px-10 rounded-full shadow-lg animate-fade-in-delay-7"
           >
-            立即体验
+            {t('home.cta.experience')}
           </a>
         </div>
       </div>
 
       {/* 页脚部分 */}
       <footer className="footer flex items-center justify-center">
-        <p className="text-gray-600">© 2025 富业集团. 保留所有权利.</p>
+        <p className="text-gray-600">{t('footer.copyright')}</p>
       </footer>
     </div>
   )

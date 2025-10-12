@@ -26,6 +26,15 @@
 
 .adm-tabs-tab {
   margin: 0;
+  color: #0088cc !important;
+}
+
+.adm-tabs-tab-active {
+  color: #0088cc !important;
+}
+
+.adm-tabs-tab-title {
+  color: #0088cc !important;
 }
 
 .navbar-telegram-btn {
