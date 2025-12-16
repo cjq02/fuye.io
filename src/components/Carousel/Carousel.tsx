@@ -132,7 +132,7 @@ function Carousel(): React.ReactElement {
             const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.6 : 0.3
             const translateX = offset * 22
             const translateZ = absOffset === 0 ? 0 : -60 * absOffset
-            const translateY = absOffset === 0 ? 0 : absOffset === 1 ? 15 : 30
+            const translateY = absOffset === 0 ? 0 : absOffset === 1 ? -20 : -40
             
             return (
               <div 
