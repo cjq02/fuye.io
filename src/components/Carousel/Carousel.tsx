@@ -105,17 +105,20 @@ function Carousel(): React.ReactElement {
           {carouselImages.map((img, index) => {
             const offset = index - currentIndex
             const absOffset = Math.abs(offset)
-            const scale = absOffset === 0 ? 1 : absOffset === 1 ? 0.85 : 0.7
-            const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.7 : 0.4
-            const translateX = offset * 20
-            const translateZ = absOffset === 0 ? 0 : -50 * absOffset
+            const scaleX = absOffset === 0 ? 1 : absOffset === 1 ? 0.9 : 0.8
+            const scaleY = absOffset === 0 ? 1 : absOffset === 1 ? 0.6 : 0.35
+            const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.6 : 0.3
+            const translateX = offset * 22
+            const translateZ = absOffset === 0 ? 0 : -60 * absOffset
+            const translateY = absOffset === 0 ? 0 : absOffset === 1 ? 15 : 30
             
             return (
               <div 
                 key={index} 
                 className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}
                 style={{
-                  transform: `translateX(${translateX}%) scale(${scale}) translateZ(${translateZ}px)`,
+                  transform: `translateX(${translateX}%) translateY(${translateY}%) scale(${scaleX}, ${scaleY}) translateZ(${translateZ}px)`,
+                  transformOrigin: 'center bottom',
                   opacity: opacity,
                   zIndex: carouselImages.length - absOffset
                 }}
