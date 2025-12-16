@@ -6,40 +6,23 @@ import coverImg1 from '@/assets/img/hom-cover1jpg.jpg'
 import coverImg2 from '@/assets/img/home-cover2.jpg'
 import mainVideo from '@/assets/video/t_main_Android_demo_2x.mp4'
 
-// 导入新功能的图标
 import iconChat from '@/assets/svg/chat.svg'
 import iconGroup from '@/assets/img/group.jpg'
 import iconCash from '@/assets/img/cash.jpg'
 import iconTool from '@/assets/svg/tool.svg'
+import Carousel from '@/components/Carousel/Carousel'
 
-// 常量定义
 const APP_URL = 'https://im.fuye.io/app/index.php?i=1&c=entry&a=site&m=mdkeji_im&do=Index&state=Index'
 
-/**
- * 首页组件
- * @returns {React.ReactElement} 渲染的首页组件
- */
 function Home(): React.ReactElement {
   const { t } = useLanguage()
   
   useEffect(() => {
-    // 页面标题已在 LanguageContext 中设置
   }, [])
 
   return (
     <div className="page-container home-container">
-      <div className="logo-section">
-        <div className="container mx-auto px-4">
-          <h1
-            className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing neon-text"
-            style={{ background: 'transparent', cursor: 'pointer' }}
-            onClick={() => { window.open(APP_URL, '_blank', 'noopener,noreferrer') }}
-          >
-          </h1>
-          <p className="text-lg text-gray-600 mt-10 animate-text-1">{t('home.subtitle1')}</p>
-          <p className="text-lg text-gray-600 mt-2 animate-text-2">{t('home.subtitle2')}</p>
-        </div>
-      </div>
+      <Carousel />
 
       {/* 视频部分 */}
       <div className="video-section py-16">

@@ -12,23 +12,128 @@
   padding-top: 4rem;
 }
 
-/* Logo 部分样式 */
-.logo-section {
-  text-align: center;
+.carousel-section {
   padding: 3rem 0;
+  position: relative;
 }
 
-.logo-section img {
-  margin: 5rem auto;
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  height: 500px;
+  perspective: 1200px;
+  cursor: grab;
+  user-select: none;
 }
 
-.logo-section h1:last-child {
-  color: #6b7280 !important;
-  /* text-gray-500 */
-  font-size: 1.2rem !important;
-  /* text-2xl */
-  margin-top: 1.5rem !important;
-  /* mt-8 */
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.carousel-slide.active {
+  transform: scale(1) translateZ(0);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: #0088cc;
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background-color: #006ba3;
+}
+
+.carousel-text-scroll {
+  margin-top: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.1) 0%, transparent 50%, rgba(0, 136, 204, 0.1) 100%);
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 136, 204, 0.2);
+  border-bottom: 1px solid rgba(0, 136, 204, 0.2);
+}
+
+.carousel-text-wrapper {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scroll-text 40s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-text-item {
+  display: inline-block;
+  font-size: 1rem;
+  color: #0088cc;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 400px;
+  }
+  
+  .carousel-slide {
+    width: 80%;
+  }
+  
+  .carousel-text-item {
+    font-size: 0.875rem;
+  }
 }
 
 /* 下载部分样式 */
