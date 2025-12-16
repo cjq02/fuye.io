@@ -22,6 +22,8 @@ function Carousel(): React.ReactElement {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
+  const [previewImage, setPreviewImage] = useState<string | null>(null)
+  const [clickStartX, setClickStartX] = useState(0)
   
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
@@ -39,15 +41,18 @@ function Carousel(): React.ReactElement {
   }, [])
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true)
+    setIsDragging(false)
     setStartX(e.pageX)
+    setClickStartX(e.pageX)
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return
-    e.preventDefault()
     const diff = startX - e.pageX
-    if (Math.abs(diff) > 50) {
+    if (Math.abs(diff) > 10) {
+      setIsDragging(true)
+    }
+    if (isDragging && Math.abs(diff) > 50) {
+      e.preventDefault()
       if (diff > 0 && currentIndex < carouselImages.length - 1) {
         setCurrentIndex(currentIndex + 1)
         setIsDragging(false)
@@ -58,19 +63,32 @@ function Carousel(): React.ReactElement {
     }
   }
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e: React.MouseEvent) => {
+    const diff = Math.abs(clickStartX - e.pageX)
+    if (diff < 5 && !isDragging) {
+      const target = e.target as HTMLElement
+      const slide = target.closest('.carousel-slide')
+      if (slide) {
+        const imgIndex = Array.from(slide.parentElement?.children || []).indexOf(slide)
+        if (imgIndex >= 0 && imgIndex < carouselImages.length) {
+          setPreviewImage(carouselImages[imgIndex])
+        }
+      }
+    }
     setIsDragging(false)
   }
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true)
+    setIsDragging(false)
     setStartX(e.touches[0].pageX)
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return
     const diff = startX - e.touches[0].pageX
-    if (Math.abs(diff) > 50) {
+    if (Math.abs(diff) > 10) {
+      setIsDragging(true)
+    }
+    if (isDragging && Math.abs(diff) > 50) {
       if (diff > 0 && currentIndex < carouselImages.length - 1) {
         setCurrentIndex(currentIndex + 1)
         setIsDragging(false)
@@ -87,6 +105,10 @@ function Carousel(): React.ReactElement {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
+  }
+
+  const closePreview = () => {
+    setPreviewImage(null)
   }
 
   return (
@@ -106,7 +128,7 @@ function Carousel(): React.ReactElement {
             const offset = index - currentIndex
             const absOffset = Math.abs(offset)
             const scaleX = absOffset === 0 ? 1 : absOffset === 1 ? 0.9 : 0.8
-            const scaleY = absOffset === 0 ? 1 : absOffset === 1 ? 0.6 : 0.35
+            const scaleY = absOffset === 0 ? 1 : absOffset === 1 ? 0.75 : 0.55
             const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.6 : 0.3
             const translateX = offset * 22
             const translateZ = absOffset === 0 ? 0 : -60 * absOffset
@@ -129,11 +151,10 @@ function Carousel(): React.ReactElement {
                   draggable={false}
                   onContextMenu={(e: React.MouseEvent<HTMLImageElement>) => e.preventDefault()}
                   onDragStart={(e: React.DragEvent<HTMLImageElement>) => e.preventDefault()}
-                  onMouseDown={(e: React.MouseEvent<HTMLImageElement>) => e.preventDefault()}
                   style={{ 
                     userSelect: 'none',
-                    pointerEvents: 'none',
-                    touchAction: 'none'
+                    touchAction: 'none',
+                    cursor: 'pointer'
                   }}
                 />
               </div>
@@ -159,6 +180,19 @@ function Carousel(): React.ReactElement {
           </div>
         </div>
       </div>
+      {previewImage && (
+        <div 
+          className="carousel-preview-overlay"
+          onClick={closePreview}
+        >
+          <img 
+            src={previewImage} 
+            alt="预览"
+            onClick={(e) => e.stopPropagation()}
+            className="carousel-preview-image"
+          />
+        </div>
+      )}
     </div>
   )
 }

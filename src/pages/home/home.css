@@ -14,6 +14,7 @@
 
 .carousel-section {
   padding: 4rem 0;
+  padding-top: calc(4rem + 60px);
   position: relative;
   background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 50%, #f5f7fa 100%);
   background-size: 200% 200%;
@@ -37,13 +38,14 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
-  height: 500px;
+  height: auto;
+  min-height: 800px;
   perspective: 1200px;
   cursor: grab;
   user-select: none;
-  padding: 3rem 0 2rem 0;
+  padding: 1rem 0 2rem 0;
   background: radial-gradient(ellipse at center, rgba(0, 136, 204, 0.03) 0%, transparent 70%);
   width: 100%;
 }
@@ -70,7 +72,7 @@
   box-shadow: 
     0 12px 40px rgba(0, 0, 0, 0.2),
     0 4px 12px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
+  object-fit: contain;
   border: 2px solid rgba(255, 255, 255, 0.6);
   background: #fff;
   padding: 4px;
@@ -161,6 +163,28 @@
   padding: 0 1rem;
 }
 
+.carousel-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-preview-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
 @keyframes scroll-text {
   0% {
     transform: translateX(0);
@@ -173,13 +197,14 @@
 @media (max-width: 768px) {
   .carousel-section {
     padding: 2rem 0;
+    padding-top: calc(2rem + 60px);
     overflow-x: hidden;
   }
   
   .carousel-container {
-    height: 400px;
-    padding: 2.5rem 0 1.5rem 0;
-    overflow-x: hidden;
+    min-height: 500px;
+    padding: 0.5rem 0 1.5rem 0;
+    overflow: visible;
   }
   
   .carousel-slide {
