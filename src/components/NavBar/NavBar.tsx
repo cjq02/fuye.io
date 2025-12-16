@@ -1,29 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
-import { Tabs } from 'antd-mobile'
 import { useLanguage } from '../../contexts/LanguageContext'
 import type { Language } from '../../contexts/LanguageContext'
 import './NavBar.css'
 import telegramIcon from '../../assets/img/telegram.png'
 import globeIcon from '../../assets/svg/global.svg'
+import logoImg from '../../assets/img/logo.png'
 
 /**
  * 导航栏组件
  * @returns {React.ReactElement} 渲染的导航栏组件
  */
 function NavBar(): React.ReactElement {
-  const navigate = useNavigate()
-  const location = useLocation()
   const { language, setLanguage, t, getLanguageDisplayName } = useLanguage()
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
-  const tabs = [
-    {
-      key: '/',
-      title: t('nav.fuye'),
-    },
-  ]
 
   // 语言切换选项
   const languageOptions: { key: Language; label: string }[] = [
@@ -60,24 +50,45 @@ function NavBar(): React.ReactElement {
     }
   }, [isLanguageDropdownOpen])
 
+  const APP_URL = 'https://im.fuye.io/app/index.php?i=1&c=entry&a=site&m=mdkeji_im&do=Index&state=Index'
+
   return (
     <nav className="navbar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Tabs
-        activeKey={location.pathname}
-        onChange={value => navigate(value)}
-        className="navbar-tabs"
-      >
-        {tabs.map(item => (
-          <Tabs.Tab
-            key={item.key}
-            title={
-              <div className="tab-item">
-                <span>{item.title}</span>
-              </div>
-            }
-          />
-        ))}
-      </Tabs>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', marginLeft: '16px' }} onClick={() => window.location.href = '/'}>
+          <img src={logoImg} alt="logo" style={{ width: 24, height: 24 }} />
+          <span style={{ fontSize: '16px', fontWeight: 600, color: '#0088cc' }}>{t('nav.fuye')}</span>
+        </div>
+        <a
+          href={APP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '6px 16px',
+            fontSize: '14px',
+            color: '#fff',
+            fontWeight: 600,
+            textDecoration: 'none',
+            borderRadius: '4px',
+            backgroundColor: '#0088cc',
+            border: '1px solid #0088cc',
+            transition: 'all 0.2s',
+            marginLeft: '12px'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#006ba3'
+            e.currentTarget.style.borderColor = '#006ba3'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#0088cc'
+            e.currentTarget.style.borderColor = '#0088cc'
+          }}
+        >
+          {t('nav.login')}
+        </a>
+      </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         {/* 语言切换下拉菜单 */}

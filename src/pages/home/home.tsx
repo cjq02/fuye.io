@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import '@/pages/home/home.css'
-import logoImg from '@/assets/img/logo.png'
 import coverImg1 from '@/assets/img/hom-cover1jpg.jpg'
 import coverImg2 from '@/assets/img/home-cover2.jpg'
 import mainVideo from '@/assets/video/t_main_Android_demo_2x.mp4'
@@ -29,38 +28,13 @@ function Home(): React.ReactElement {
 
   return (
     <div className="page-container home-container">
-      {/* 浮动立即体验按钮（顶部居中固定浮动） */}
-      {/*
-        @description 固定浮动在页面顶部居中的立即体验按钮，点击跳转 APP_URL
-        @returns {JSX.Element} 浮动按钮
-      */}
-      <a
-        href={APP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed left-1/2 top-20 z-50 text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg transition-all duration-200 wave-bg"
-        style={{ transform: 'translateX(-50%)' }}
-      >
-        {t('home.experience')}
-      </a>
-
-      {/* Logo 部分 */}
       <div className="logo-section">
         <div className="container mx-auto px-4">
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-          >
-            <img src={logoImg} alt="Telegram" className="h-36 mx-auto animate-fade-in" />
-          </a>
           <h1
             className="text-10xl md:text-10xl font-extrabold animate-fade-in-delay animate-breathing neon-text"
             style={{ background: 'transparent', cursor: 'pointer' }}
             onClick={() => { window.open(APP_URL, '_blank', 'noopener,noreferrer') }}
           >
-            {/* FUYE.IO 已去除 */}
           </h1>
           <p className="text-lg text-gray-600 mt-10 animate-text-1">{t('home.subtitle1')}</p>
           <p className="text-lg text-gray-600 mt-2 animate-text-2">{t('home.subtitle2')}</p>
