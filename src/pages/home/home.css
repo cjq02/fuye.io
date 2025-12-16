@@ -13,20 +13,39 @@
 }
 
 .carousel-section {
-  padding: 3rem 0;
+  padding: 4rem 0;
   position: relative;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 50%, #f5f7fa 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 10s ease infinite;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   height: 500px;
   perspective: 1200px;
   cursor: grab;
   user-select: none;
+  padding: 3rem 0 2rem 0;
+  background: radial-gradient(ellipse at center, rgba(0, 136, 204, 0.03) 0%, transparent 70%);
+  width: 100%;
 }
 
 .carousel-container:active {
@@ -45,9 +64,15 @@
 .carousel-slide img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: #fff;
+  padding: 4px;
 }
 
 .carousel-slide.active {
@@ -57,37 +82,49 @@
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 20;
+  padding-bottom: 0.5rem;
 }
 
 .carousel-dot {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   border: none;
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .carousel-dot.active {
   background-color: #0088cc;
-  transform: scale(1.2);
+  width: 8px;
+  height: 8px;
 }
 
 .carousel-dot:hover {
   background-color: #006ba3;
+  width: 7px;
+  height: 7px;
 }
 
 .carousel-text-scroll {
-  margin-top: 2rem;
+  margin-top: 1rem;
   overflow: hidden;
   white-space: nowrap;
-  background: linear-gradient(90deg, rgba(0, 136, 204, 0.1) 0%, transparent 50%, rgba(0, 136, 204, 0.1) 100%);
-  padding: 1rem 0;
-  border-top: 1px solid rgba(0, 136, 204, 0.2);
-  border-bottom: 1px solid rgba(0, 136, 204, 0.2);
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.08) 0%, rgba(0, 136, 204, 0.15) 50%, rgba(0, 136, 204, 0.08) 100%);
+  padding: 1.2rem 0;
+  border-top: 2px solid rgba(0, 136, 204, 0.2);
+  border-bottom: 2px solid rgba(0, 136, 204, 0.2);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .carousel-text-wrapper {
@@ -123,12 +160,32 @@
 }
 
 @media (max-width: 768px) {
+  .carousel-section {
+    padding: 2rem 0;
+    overflow-x: hidden;
+  }
+  
   .carousel-container {
     height: 400px;
+    padding: 2.5rem 0 1.5rem 0;
+    overflow-x: hidden;
   }
   
   .carousel-slide {
     width: 80%;
+  }
+  
+  .carousel-slide img {
+    border-radius: 12px;
+    padding: 2px;
+  }
+  
+  .carousel-dots {
+    margin-top: 0.5rem;
+  }
+  
+  .carousel-text-scroll {
+    margin-top: 0.5rem;
   }
   
   .carousel-text-item {
