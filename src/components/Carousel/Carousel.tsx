@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import '@/pages/home/home.css'
 
 import carousel1 from '@/assets/img/carousel/1.jpg'
@@ -24,6 +24,9 @@ function Carousel(): React.ReactElement {
   const [startX, setStartX] = useState(0)
   const [previewImage, setPreviewImage] = useState<string | null>(null)
   const [clickStartX, setClickStartX] = useState(0)
+  const autoScrollRef = useRef<NodeJS.Timeout | null>(null)
+  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const hasSwipedRef = useRef(false)
   
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
@@ -33,17 +36,45 @@ function Carousel(): React.ReactElement {
     return () => document.removeEventListener('contextmenu', handleContextMenu)
   }, [])
 
-  useEffect(() => {
-    const autoScroll = setInterval(() => {
+  const startAutoScroll = () => {
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current)
+    }
+    autoScrollRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % carouselImages.length)
     }, 4000)
-    return () => clearInterval(autoScroll)
+  }
+
+  const pauseAutoScroll = () => {
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current)
+      autoScrollRef.current = null
+    }
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current)
+    }
+    pauseTimeoutRef.current = setTimeout(() => {
+      startAutoScroll()
+    }, 10000)
+  }
+
+  useEffect(() => {
+    startAutoScroll()
+    return () => {
+      if (autoScrollRef.current) {
+        clearInterval(autoScrollRef.current)
+      }
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current)
+      }
+    }
   }, [])
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(false)
     setStartX(e.pageX)
     setClickStartX(e.pageX)
+    hasSwipedRef.current = false
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -51,21 +82,22 @@ function Carousel(): React.ReactElement {
     if (Math.abs(diff) > 10) {
       setIsDragging(true)
     }
-    if (isDragging && Math.abs(diff) > 50) {
+    if (isDragging && Math.abs(diff) > 50 && !hasSwipedRef.current) {
       e.preventDefault()
+      hasSwipedRef.current = true
       if (diff > 0 && currentIndex < carouselImages.length - 1) {
         setCurrentIndex(currentIndex + 1)
-        setIsDragging(false)
+        pauseAutoScroll()
       } else if (diff < 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1)
-        setIsDragging(false)
+        pauseAutoScroll()
       }
     }
   }
 
   const handleMouseUp = (e: React.MouseEvent) => {
     const diff = Math.abs(clickStartX - e.pageX)
-    if (diff < 5 && !isDragging) {
+    if (diff < 5 && !isDragging && !hasSwipedRef.current) {
       const target = e.target as HTMLElement
       const slide = target.closest('.carousel-slide')
       if (slide) {
@@ -76,11 +108,13 @@ function Carousel(): React.ReactElement {
       }
     }
     setIsDragging(false)
+    hasSwipedRef.current = false
   }
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setIsDragging(false)
     setStartX(e.touches[0].pageX)
+    hasSwipedRef.current = false
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -88,23 +122,26 @@ function Carousel(): React.ReactElement {
     if (Math.abs(diff) > 10) {
       setIsDragging(true)
     }
-    if (isDragging && Math.abs(diff) > 50) {
+    if (isDragging && Math.abs(diff) > 50 && !hasSwipedRef.current) {
+      hasSwipedRef.current = true
       if (diff > 0 && currentIndex < carouselImages.length - 1) {
         setCurrentIndex(currentIndex + 1)
-        setIsDragging(false)
+        pauseAutoScroll()
       } else if (diff < 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1)
-        setIsDragging(false)
+        pauseAutoScroll()
       }
     }
   }
 
   const handleTouchEnd = () => {
     setIsDragging(false)
+    hasSwipedRef.current = false
   }
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
+    pauseAutoScroll()
   }
 
   const closePreview = () => {
@@ -188,7 +225,7 @@ function Carousel(): React.ReactElement {
           <img 
             src={previewImage} 
             alt="预览"
-            onClick={(e) => e.stopPropagation()}
+            onClick={closePreview}
             className="carousel-preview-image"
           />
         </div>
